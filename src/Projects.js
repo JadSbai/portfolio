@@ -1,104 +1,121 @@
-import { Card, CardActionArea, CardActions, CardContent, CardHeader, Chip, Fade, Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
-import { RepoForkedIcon, RepoIcon, StarIcon } from '@primer/octicons-react';
-import Image from 'next/image'
-import { useRef } from "react";
+import {
+    Button,
+    Chip,
+    Fade,
+    Grid,
+    makeStyles,
+    Typography
+} from "@material-ui/core";
+import React, {useRef} from "react";
 import useAnimate from "./useAnimate";
+import data from '../data.json';
+const { projects } = data
+import {
+    FiCard,
+    FiCardActions,
+    FiCardContent,
+    FiCardMedia,
+} from "./FullImageCard";
+import {CustomizedDialogs} from "./customizedPopup";
 
 const useStyles = makeStyles(theme => ({
-    cont: {
+    projects_cont: {
         minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+        flexDirection: 'column',
+        backgroundColor: 'black',
+        justifyContent: 'space-evenly',
+        paddingBottom: '3%',
     },
-    card: {
-        height: '100%'
-    },
-    cardActionArea: {
+
+    media: {
         height: '100%',
-        // display: 'grid'
+        opacity: 0.4,
+    },
+
+    card:{
+        height: `calc(40vh - ${theme.spacing(4)}px)`,
+    },
+
+    content:{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'},
+
+    fiCardContent: {
+        color: "#ffffff",
+        backgroundColor: "rgba(0,0,0,.24)",
+        display: 'flex',
+        flexDirection: 'row',
+    },
+
+    fiCardContentTextSecondary: {
+        color: "black",
+        backgroundColor: 'deepskyblue'
+    },
+    header:{
+        position: 'relative',
+        fontWeight: 'bold'
     }
 }))
 
-export default function Projects({ data }) {
+const Projects = React.forwardRef((props, ref) => {
 
     const classes = useStyles()
-
     const animRef = useRef(null)
     const animate = useAnimate(animRef)
 
     return (
-        <Grid direction="row-reverse" container justify="center" alignItems="center" spacing={10} className={classes.cont}>
-            <Grid item xs={12} lg={6}>
-                <Typography variant="h2" gutterBottom align="center" innerRef={animRef}>
+        <Grid direction="row-reverse" container  justify={'center'} alignItems={'center'}  className={classes.projects_cont} ref={ref}>
+                <Typography variant="h2" gutterBottom align="center" innerRef={animRef} style={{fontWeight: 'bold'}}>
                     Projects
                 </Typography>
-                <Hidden mdDown>
-                    <Fade in={animate} style={{ transitionDelay: '250ms' }}>
-                        <div>
-                            <Image
-                                alt="Projects"
-                                src="/projects.svg"
-                                width="1144"
-                                height="617.32"
-                            />
-                        </div>
-                    </Fade>
-                </Hidden>
-            </Grid>
-            <Grid container item xs={12} lg={6} direction="row" spacing={1}>
+            <Grid container direction="row" spacing={8} style={{maxWidth: '70%'}}>
                 {
-                    !!data && data.map((v, i) =>
-                        <Grid item sm={6} xs={12} key={i}>
-                            <Fade in={animate} style={{ transitionDelay: `${200 * i}ms` }}>
-                                <Card key={i} className={classes.card}>
-                                    <CardActionArea
-                                        className={classes.cardActionArea}
-                                        href={v.value.html_url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <CardHeader
-                                            title={<><RepoIcon verticalAlign='middle' /> {v.value.name}</>}
-                                            subheader={
-                                                <>
-                                                    {
-                                                        !!v.value.stargazers_count &&
-                                                        <>
-                                                            <StarIcon verticalAlign='middle' />
-                                                            {v.value.stargazers_count}
-                                                        </>
-                                                    }
-                                                    {
-                                                        !!v.value.forks &&
-                                                        <>
-                                                            <RepoForkedIcon verticalAlign='middle' />
-                                                            {v.value.forks}
-                                                        </>
-                                                    }
-                                                </>
-                                            }
+                    !!projects && projects.map((project, index) =>
+                        <Grid item xs key={index} >
+                            <Fade in={animate} style={{ transitionDelay: `${200 * index}ms` }}>
+                                <FiCard key={index} className={classes.card}>
+                                        <FiCardMedia
+                                            className={classes.media}
+                                            image={project.image}
+                                            title="Slurp"
                                         />
-                                        <CardContent>
-                                            <Typography variant="body2" color="textSecondary" component="p">
-                                                {v.value.description}
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            <Grid container direction="row" spacing={1}>
+                                    <div className={classes.content}>
+                                        <FiCardContent>
+                                            <Grid container direction="row" spacing={1} justify={'center'}>
                                                 {
-                                                    !!v.value.languages &&
-                                                    v.value.languages.map((lang, i) =>
+                                                    !!project &&
+                                                    project.tech_stack.map((tech, i) =>
                                                         <Grid item key={i}>
                                                             <Chip
                                                                 key={i}
-                                                                label={lang}
+                                                                label={tech}
                                                                 size="small"
+                                                                className={classes.fiCardContentTextSecondary}
                                                             />
                                                         </Grid>
                                                     )
                                                 }
                                             </Grid>
-                                        </CardActions>
-                                    </CardActionArea>
-                                </Card>
+                                        </FiCardContent>
+                                            <Typography variant="h4" gutterBottom align="center" className={classes.header}>
+                                                <a href={project.link} style={{color: 'white'}} target="_blank">
+                                                    {project.name}
+                                                </a>
+                                            </Typography>
+                                        <FiCardActions>
+                                            <Grid container spacing={6} >
+                                                <Grid item xs={4}>
+                                                    <Button size="medium" color="inherit" variant="outlined" href={project.link} target={'_blank'}>
+                                                        VIEW
+                                                    </Button>
+                                                </Grid>
+                                                <Grid item xs={8}>
+                                                    <CustomizedDialogs title={project.name} description={project.description} repo={project.repository}>
+                                                        LEARN MORE
+                                                    </CustomizedDialogs>
+                                                </Grid>
+                                            </Grid>
+                                        </FiCardActions>
+                                    </div>
+                                </FiCard>
                             </Fade>
                         </Grid>
                     )
@@ -106,4 +123,8 @@ export default function Projects({ data }) {
             </Grid>
         </Grid>
     )
-}
+});
+
+export {Projects}
+
+

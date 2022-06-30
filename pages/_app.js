@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { MuiThemeProvider, useMediaQuery, CssBaseline } from '@material-ui/core';
 import { darkTheme, lightTheme } from '../src/theme';
 
+
 export default function MyApp({ Component, pageProps }) {
 
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -26,7 +27,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>Kaustubh Odak</title>
+        <title>Jad Sbaï</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <MuiThemeProvider theme={theme}>

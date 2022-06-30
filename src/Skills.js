@@ -1,8 +1,15 @@
-import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom } from "@material-ui/core";
+import {
+    Avatar,
+    Grid,
+    makeStyles,
+    Tooltip,
+    Typography,
+    useTheme,
+    Zoom
+} from "@material-ui/core";
 import Cancel from "@material-ui/icons/Cancel";
 import clsx from "clsx";
-import Image from 'next/image'
-import { useRef} from "react";
+import React, { useRef} from "react";
 import simpleIcons from 'simple-icons'
 import data from '../data.json'
 import useAnimate from "./useAnimate";
@@ -38,8 +45,11 @@ Object.values(wrappedSkills).forEach(oarr => {
 })
 
 const useStyles = makeStyles(theme => ({
-    cont: {
+    skills_cont: {
         minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+        backgroundColor: '#1d1d24',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
     },
     skobj: {
         marginBottom: theme.spacing(4)
@@ -52,41 +62,23 @@ const useStyles = makeStyles(theme => ({
     ...iobj
 }))
 
-export default function Skills() {
-
+const Skills = React.forwardRef((props, ref) =>
+{
     const classes = useStyles()
-    const theme = useTheme()
-    const mdDown = useMediaQuery(theme.breakpoints.down('md'))
-    const align = mdDown ? "center" : "flex-end"
-    const textAlign = mdDown ? "center" : "right"
 
     const animRef = useRef(null)
     const animate = useAnimate(animRef)
 
     return (
-        <Grid container justify="center" alignItems="center" spacing={10} className={classes.cont}>
-            <Grid item xs={12} lg={6} ref={animRef}>
-                <Typography variant="h2" gutterBottom align="center">
+        <Grid container justify="center" alignItems="center" className={classes.skills_cont} ref={ref}>
+                <Typography variant="h2" gutterBottom align="center" style={{fontWeight: 'bold'}}>
                     Skills
                 </Typography>
-                <Hidden mdDown>
-                    <Fade in={animate} style={{ transitionDelay: '100ms' }}>
-                        <div>
-                            <Image
-                                alt="Skills"
-                                src="/skill.svg"
-                                width="1139"
-                                height="655"
-                            />
-                        </div>
-                    </Fade>
-                </Hidden>
-            </Grid>
-            <Grid container item xs={12} lg={6} direction="column" spacing={1} alignItems={align}>
+            <Grid container item xs={12} lg={6} direction="column" spacing={4} alignItems={'center'} ref={animRef} style={{maxWidth: '60%'}}>
                 {
                     Object.getOwnPropertyNames(wrappedSkills).map((title, id) =>
-                        <Grid item key={id} className={classes.skobj}>
-                            <Typography variant="h4" align={textAlign} gutterBottom component="p">
+                        <Grid item key={id}  className={classes.skobj}>
+                            <Typography variant="h4" align={'center'} gutterBottom component="p">
                                 {title}
                             </Typography>
                             <Grid container item direction="row" spacing={1} justify="center">
@@ -110,4 +102,6 @@ export default function Skills() {
             </Grid>
         </Grid>
     )
-}
+});
+
+export {Skills}

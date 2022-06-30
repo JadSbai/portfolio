@@ -1,4 +1,16 @@
-import { Avatar, Fade, Grid, Hidden, makeStyles, Tooltip, Typography, useMediaQuery, useTheme, Zoom } from "@material-ui/core";
+import {
+    Avatar,
+    Container,
+    Fade,
+    Grid,
+    Hidden,
+    makeStyles,
+    Tooltip,
+    Typography,
+    useMediaQuery,
+    useTheme,
+    Zoom
+} from "@material-ui/core";
 import ReactTyped from "react-typed";
 import clsx from "clsx";
 import Image from 'next/image'
@@ -6,6 +18,7 @@ import simpleIcons from 'simple-icons'
 import data from '../data.json'
 import { iconify } from "./util";
 import Cancel from "@material-ui/icons/Cancel";
+import React from "react";
 const { landing } = data
 
 const professionalDetails = landing.professionalDetails.map(({ alt, icon, link }) => {
@@ -30,9 +43,10 @@ professionalDetails.forEach(({ alt, backgroundColor }) => {
 })
 
 const useStyles = makeStyles(theme => ({
-    cont: {
+    landing_cont: {
         minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
-        paddingBottom: theme.spacing(10)
+        paddingBottom: theme.spacing(10),
+        background: 'black',
     },
     subtitle: {
         marginTop: theme.spacing(3),
@@ -46,20 +60,20 @@ const useStyles = makeStyles(theme => ({
     ...iobj
 }))
 
-export default function Landing() {
+const Landing = React.forwardRef((props, ref) =>{
 
     const classes = useStyles();
     const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-        <Grid container justify="center" alignItems="center" className={classes.cont}>
-            <Grid item xs={12} lg={6}>
+        <Grid container justify="center" alignItems="center" className={classes.landing_cont} ref={ref}>
+            <Container style={{maxWidth: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <Grid item xs={12} lg={6} >
                 <Typography variant={mdDown ? "h2" : "h1"}>
                     {landing.title}
                 </Typography>
                 <Typography variant={mdDown ? "h5" : "h4"} component="h2" className={classes.subtitle}>
-
                     <ReactTyped
                         strings={landing.subtitles}
                         typeSpeed={40}
@@ -98,6 +112,10 @@ export default function Landing() {
                     </Grid>
                 </Fade>
             </Hidden>
+            </Container>
         </Grid>
+
     )
-}
+});
+
+export {Landing}
