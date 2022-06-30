@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     card: {
         width: `calc(100vh - ${theme.spacing(4)}px)`,
         backgroundColor: 'black',
-        padding: '1%'
+        height: `calc(20vh - ${theme.spacing(4)}px)`,
     },
     cardHeader: {
         paddingTop: 0
@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         flexDirection: 'row',
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        padding: '1%',
     },
     expObj: {
         marginBottom: theme.spacing(4)
@@ -86,7 +87,7 @@ const Experience = React.forwardRef((props, ref) =>{
 
     return (
         <Grid  container spacing={1} className={classes.experience_cont} ref={ref}>
-                <Typography variant="h2" gutterBottom align="center" style={{fontWeight: 'bold'}}>
+                <Typography variant="h2" gutterBottom align="center" style={{fontWeight: 'bold', paddingTop: '5%', paddingBottom: '2%'}}>
                     Experience
                 </Typography>
             <Grid container direction="column" spacing={1} alignItems={'center'} justifyContent={'center'} style={{maxWidth: '60%'}}>

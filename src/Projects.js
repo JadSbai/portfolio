@@ -20,7 +20,7 @@ import {CustomizedDialogs} from "./customizedPopup";
 
 const useStyles = makeStyles(theme => ({
     projects_cont: {
-        minHeight: `calc(100vh - ${theme.spacing(4)}px)`,
+        minHeight: `calc(85vh - ${theme.spacing(4)}px)`,
         flexDirection: 'column',
         backgroundColor: 'black',
         justifyContent: 'space-evenly',
