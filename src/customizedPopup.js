@@ -2,7 +2,7 @@ import * as React from 'react';
 import {BootstrapDialogTitle, BootstrapDialog} from "./bootstrapDialog";
 import {Button, DialogActions, DialogContent, Typography} from "@material-ui/core";
 
- function CustomizedDialogs({title, description, repo}) {
+ function CustomizedDialogs({title, description, repo, isProject, company}) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -14,8 +14,18 @@ import {Button, DialogActions, DialogContent, Typography} from "@material-ui/cor
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen} size="medium" color="inherit">
-                LEARN MORE
+            <Button
+                size="medium"
+                variant="outlined"
+                color="inherit"
+                onMouseDown={event => event.stopPropagation()}
+                onClick={event => {
+                    event.stopPropagation();
+                    event.preventDefault();
+                    handleClickOpen();
+                }}
+            >
+                {isProject? 'LEARN MORE': "DETAILS"}
             </Button>
             <BootstrapDialog
                 onClose={handleClose}
@@ -23,16 +33,16 @@ import {Button, DialogActions, DialogContent, Typography} from "@material-ui/cor
                 open={open}
             >
                 <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose} style={{backgroundColor: '#1d1d24', alignSelf: 'center', fontWeight: 'bold'}}>
-                    {title}
+                    {isProject?title: `${title} at ${company}`}
                 </BootstrapDialogTitle>
                 <DialogContent dividers style={{backgroundColor: '#1d1d24'}}>
-                    <Typography gutterBottom>
+                    <Typography gutterBottom style={{whiteSpace: 'pre-wrap'}}>
                         {description}
                     </Typography>
                     <Typography gutterBottom style={{marginTop: '5%'}}>
-                        {repo !== ""? <a href={repo} style={{color: 'white'}}>
+                        {isProject? repo !== ""? <a href={repo} style={{color: 'white'}}>
                             Look at the Github repository
-                        </a>: null}
+                        </a>: null: null}
                     </Typography>
                 </DialogContent>
                 <DialogActions style={{backgroundColor: '#1d1d24'}}>
