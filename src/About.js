@@ -44,7 +44,9 @@ const About = React.forwardRef((props, ref) => {
                         <Image
                             alt="Display Picture"
                             src={about.picture}
-                            layout="fill"
+                            layout={'fixed'}
+                            width={dpx*12}
+                            height={dpx*15}
                         />
                     </Avatar>
                 </Grid>
