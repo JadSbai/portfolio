@@ -15,6 +15,7 @@ import { DateRange, LocationCity } from '@material-ui/icons';
 import data from '../data.json'
 import React, { useRef } from "react";
 import useAnimate from "./useAnimate";
+import {CustomizedDialogs} from "./customizedPopup";
 const { experience } = data
 
 const useStyles = makeStyles(theme => ({
@@ -22,6 +23,7 @@ const useStyles = makeStyles(theme => ({
         height: `calc(100vh - ${theme.spacing(4)}px)`,
         backgroundColor: '#1d1d24',
         flexDirection: 'column',
+        display: 'flex',
         justifyContent: 'space-evenly',
         alignItems: 'center'
     },
@@ -29,20 +31,21 @@ const useStyles = makeStyles(theme => ({
         width: `calc(100vh - ${theme.spacing(4)}px)`,
         backgroundColor: 'black',
         height: `calc(20vh - ${theme.spacing(4)}px)`,
+
     },
     cardHeader: {
-        paddingTop: 0
+        paddingTop: 0,
+        maxHeight: '20%'
+
     },
     cardActionArea: {
         height: '100%',
-        flexDirection: 'row',
         display: 'flex',
-        justifyContent: 'space-between',
         padding: '1%',
     },
     expObj: {
-        marginBottom: theme.spacing(4)
-    }
+        marginBottom: theme.spacing(4),
+    },
 }))
 
 const getHumanDiff = (startDate, endDate) => {
@@ -93,11 +96,11 @@ const Experience = React.forwardRef((props, ref) =>{
             <Grid container direction="column" spacing={1} alignItems={'center'} justifyContent={'center'} style={{maxWidth: '60%'}}>
                 {
                     Object.getOwnPropertyNames(experience).map((title, id) =>
-                        <Grid item key={id} className={classes.expObj}>
+                        <Grid item container justifyContent={'center'} alignItems={'center'} key={id} className={classes.expObj}>
                             <Typography variant="h4" align={textAlign} gutterBottom component="p">
                                 {''}
                             </Typography>
-                            <Grid container item direction="column" spacing={1} justify="center">
+                            <Grid container item direction="column" spacing={1} justifyContent="center">
                                 {
                                     experience[title].map(({
                                         organization,
@@ -119,9 +122,10 @@ const Experience = React.forwardRef((props, ref) =>{
                                                         className={classes.cardActionArea}
                                                         href={url}
                                                         target="_blank"
+                                                        component={'a'}
                                                         rel="noopener noreferrer"
                                                     >
-                                                        <div>
+                                                        <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-evenly'}}>
                                                         <CardHeader
                                                             avatar={
                                                                 <Avatar variant="rounded">
@@ -132,24 +136,26 @@ const Experience = React.forwardRef((props, ref) =>{
                                                                     />
                                                                 </Avatar>
                                                             }
-                                                            title={organization}
+                                                           title={organization}
                                                             subheader={role + " - " + type}
+                                                            content={classes.cardHeader}
                                                         />
                                                         <CardHeader
                                                             avatar={<DateRange />}
                                                             title={getHumanDiff(startDate, endDate)}
                                                             subheader={`${startDate} - ${endDate? endDate: 'Present'}`}
-                                                            className={classes.cardHeader}
+                                                            content={classes.cardHeader}
                                                         />
                                                         <CardHeader
                                                             avatar={<LocationCity />}
                                                             subheader={`${city}, ${country}`}
-                                                            className={classes.cardHeader}
+                                                            content={classes.cardHeader}
                                                         />
+                                                            <div >
+                                                                <CustomizedDialogs title={role} description={description} isProject={false} company={organization}/>
+                                                            </div>
+
                                                 </div>
-                                                        <Typography style={{maxWidth: '60%', whiteSpace: 'pre-wrap'}}>
-                                                            {description}
-                                                        </Typography>
                                                     </CardActionArea>
                                                 </Card>
                                             </Fade>
