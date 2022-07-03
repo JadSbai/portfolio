@@ -52,7 +52,7 @@ const BottomBar = () => {
 
     return (
         <Grid container justifyContent={'center'} alignItems={'center'}>
-            <Grid item xs={3} justifyContent={'center'} alignItems={'center'}>
+            <Grid item container xs={3} justifyContent={'center'} alignItems={'center'}>
                 <IconButton onClick={() => window.location.reload()}>
                     <Icon classes={{root: classes.iconRoot}} >
                         <img className={classes.imageIcon}  src="/android-chrome-512x512.png" alt={'icon'}/>
@@ -60,7 +60,7 @@ const BottomBar = () => {
                 </IconButton>
             </Grid>
             <Grid item xs={6} container style={{paddingBottom: 10, paddingTop: 10}}>
-                <Grid container item xs={12} spacing={2} justify="center">
+                <Grid container item xs={12} spacing={2} justifyContent="center">
                     {
                         socialDetails.map(({ alt, icon, link }, i) =>
                             <Grid item key={i}>
