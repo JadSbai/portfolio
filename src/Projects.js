@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     card:{
-        height: `calc(40vh - ${theme.spacing(4)}px)`,
+        height: `calc(44vh - ${theme.spacing(4)}px)`,
     },
 
     content:{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center'},
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     },
     header:{
         position: 'relative',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
 }))
 
@@ -79,7 +79,7 @@ const Projects = React.forwardRef((props, ref) => {
                                         />
                                     <div className={classes.content}>
                                         <FiCardContent>
-                                            <Grid container direction="row" spacing={1} justify={'center'}>
+                                            <Grid container direction="row" spacing={1} justifyContent={'center'} >
                                                 {
                                                     !!project &&
                                                     project.tech_stack.map((tech, i) =>
@@ -101,16 +101,14 @@ const Projects = React.forwardRef((props, ref) => {
                                                 </a>
                                             </Typography>
                                         <FiCardActions>
-                                            <Grid container spacing={6} >
+                                            <Grid container spacing={6} style={{minHeight: '20%'}}>
                                                 <Grid item xs={4}>
                                                     <Button size="medium" color="inherit" variant="outlined" href={project.link} target={'_blank'}>
                                                         VIEW
                                                     </Button>
                                                 </Grid>
                                                 <Grid item xs={8}>
-                                                    <CustomizedDialogs title={project.name} description={project.description} repo={project.repository}>
-                                                        LEARN MORE
-                                                    </CustomizedDialogs>
+                                                    <CustomizedDialogs title={project.name} description={project.description} repo={project.repository} isProject={true}/>
                                                 </Grid>
                                             </Grid>
                                         </FiCardActions>
