@@ -26,11 +26,6 @@ const useStyles = makeStyles(theme => ({
     width: 50,
   },
 
-  tabs:{
-    marginRight: '35%',
-    width: '60%'
-  },
-
 }))
 
 import {Skills} from "../src/Skills";
@@ -127,6 +122,8 @@ export default function Index() {
               value={tab}
               onChange={handleChange}
               textColor="secondary"
+              variant="scrollable"
+              scrollButtons="auto"
               indicatorColor="secondary"
               aria-label="secondary tabs example"
               className={classes.tabs}
