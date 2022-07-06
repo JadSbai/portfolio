@@ -52,14 +52,14 @@ const BottomBar = () => {
 
     return (
         <Grid container justifyContent={'center'} alignItems={'center'}>
-            <Grid item container xs={3} justifyContent={'center'} alignItems={'center'}>
+            <Grid item container xs={1} justifyContent={'center'} alignItems={'center'}>
                 <IconButton onClick={() => window.location.reload()}>
                     <Icon classes={{root: classes.iconRoot}} >
                         <img className={classes.imageIcon}  src="/android-chrome-512x512.png" alt={'icon'}/>
                     </Icon>
                 </IconButton>
             </Grid>
-            <Grid item xs={6} container style={{paddingBottom: 10, paddingTop: 10}}>
+            <Grid item xs={9} container style={{paddingBottom: 10, paddingTop: 10}}>
                 <Grid container item xs={12} spacing={2} justifyContent="center">
                     {
                         socialDetails.map(({ alt, icon, link }, i) =>
@@ -76,9 +76,9 @@ const BottomBar = () => {
                     }
                 </Grid>
             </Grid>
-            <Grid item xs={3} style={{paddingLeft: '5%'}}>
+            <Grid item xs={2} style={{paddingLeft: '5%'}}>
                 <Typography>
-                    Copyright © 2022 Jad. All Rights Reserved
+                    Copyright © 2022 Jad
                 </Typography>
             </Grid>
         </Grid>

@@ -97,10 +97,10 @@ const Experience = React.forwardRef((props, ref) =>{
                 {
                     Object.getOwnPropertyNames(experience).map((title, id) =>
                         <Grid item container justifyContent={'center'} alignItems={'center'} key={id} className={classes.expObj}>
-                            <Typography variant="h4" align={textAlign} gutterBottom component="p">
-                                {''}
-                            </Typography>
-                            <Grid container item direction="column" spacing={1} justifyContent="center">
+                            {/*<Typography variant="h4" align={textAlign} gutterBottom component="p">*/}
+                            {/*    {''}*/}
+                            {/*</Typography>*/}
+                            <Grid container item direction="column" spacing={1} justifyContent="center" alignItems={'center'}>
                                 {
                                     experience[title].map(({
                                         organization,
@@ -115,7 +115,7 @@ const Experience = React.forwardRef((props, ref) =>{
                                         description,
                                         thumbnail
                                     }, i) =>
-                                        <Grid container item xs={12} sm key={i}>
+                                        <Grid container item xs={12} sm key={i} justifyContent={'center'} alignItems={'center'}>
                                             <Fade in={animate} style={{ transitionDelay: `${200 * i}ms` }}>
                                                 <Card className={classes.card}>
                                                     <CardActionArea
