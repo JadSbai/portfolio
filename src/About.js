@@ -34,7 +34,7 @@ const About = React.forwardRef((props, ref) => {
                 <Typography variant="h5" gutterBottom component="p">
                     {about.description}
                 </Typography>
-                <Typography variant="h4" gutterBottom component="p" align={'center'}>
+                <Typography variant="h4" gutterBottom component="p" align={'center'} style={{marginTop: '4%'}}>
                     <a href={about.CV} style={{color: 'white'}} download>Download my CV</a>
                 </Typography>
             </Grid>
