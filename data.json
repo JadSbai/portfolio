@@ -112,15 +112,15 @@
                 "description": "- Design, develop and unit test applications in accordance with established standards\n- Package and support the deployment of releases\n- Analyze and resolve technical and application problems\n- Adhere to high-quality development principles while delivering solutions on-time and on-budget\n"
             },
             {
-                "organization": "Slurp",
+                "organization": "Schmoffee",
                 "role": "Chief Executive Officer",
                 "type": "Full-Time",
-                "startDate": "2022-01-01",
+                "startDate": "2022-06-01",
                 "city": "London",
                 "country": "UK",
-                "url": "https://www.linkedin.com/company/slurp-uk/",
-                "thumbnail": "/Slurp.png",
-                "description": "- In charge of the successful launch of a Pilot Program in September in London.\n- Oversee the infrastructure of the product and manage the company's technological roadmap. \n- Analyze target markets to create a viable business model/strategy.\n- Act as a liaison between the customers and the business."
+                "url": "https://www.linkedin.com/company/schmoffee/",
+                "thumbnail": "/schmoffee.jpg",
+                "description": "- In charge of leading a pilot program in London, set to launch in September.\n- Oversee the infrastructure of the product and manage the company's technological roadmap. \n- Analyze target markets to create a viable business model/strategy.\n- Act as a liaison between the customers and the business.\n- Plan the MVP of the application."
             },
             {
                 "organization": "Green Enterprise",
@@ -147,7 +147,7 @@
         ]
     },
     "about": {
-        "description": "I am a multi-lingual Full-Stack Software Engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Co-founded Slurp, a tech start up that stands to disrupt the coffee shop business in London and beyond.",
+        "description": "I am a multi-lingual Full-Stack Software Engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Co-founded Schmoffee",
         "picture": "/profile-picture.jpg",
         "social": [
             {
