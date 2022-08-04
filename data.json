@@ -4,8 +4,7 @@
         "title": "Hi, I'm Jad",
         "subtitles": [
             "Full-stack developer 🌐",
-            "Cross-platform developer 📱💻",
-            "Co-founder of Schmoffee ☕"
+            "Founder of Schmoffee ☕"
         ],
         "professionalDetails": [
             {
@@ -92,7 +91,7 @@
             "name": "Slurp",
             "type": "Mobile",
             "tech_stack": ["ReactNative", "Firebase", "Detox", "JavaScript"],
-            "description": "A digital coffee shop platform that stands to disrupt the coffee shop business in London and beyond.\nThe system consists of 2 applications. The first one is a cross-platform mobile app aimed at coffee enthusiasts which, by the means of a map, allows users to easily browse through nearby coffee shops as well as quickly and seamlessly make an order. The second one is a Tablet app designed for coffee shops. Firstly, it comprises an order management interface which enables coffee shops to easily manage, track and prioritise orders. Secondly, it integrates a stock management system for monitoring stocks resulting in reduced waste and improvement of both staff and customer experience by avoiding cancelled orders.\n",
+            "description": "A digital coffee shop platform that stood to disrupt the coffee shop business in London and beyond.\nThe system consists of 2 applications. The first one is a cross-platform mobile app aimed at coffee enthusiasts which, by the means of a map, allows users to easily browse through nearby coffee shops as well as quickly and seamlessly make an order. The second one is a Tablet app designed for coffee shops. Firstly, it comprises an order management interface which enables coffee shops to easily manage, track and prioritise orders. Secondly, it integrates a stock management system for monitoring stocks resulting in reduced waste and improvement of both staff and customer experience by avoiding cancelled orders.\n",
             "repository": "",
             "link": "/screencast.mp4",
             "image": "/coffee.jpg"
@@ -147,7 +146,7 @@
         ]
     },
     "about": {
-        "description": "I am a multi-lingual Full-Stack Software Engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Co-founded Schmoffee",
+        "description": "I am a multi-lingual Full-Stack Software Engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Founded Schmoffee",
         "picture": "/profile-picture.jpg",
         "social": [
             {
