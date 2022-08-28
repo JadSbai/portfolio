@@ -38,7 +38,8 @@
             "HTML5",
             "CSS3",
             "TypeScript",
-            "Scala"
+            "Scala",
+            "C"
         ],
         "Frontend": [
             "React",
@@ -108,7 +109,7 @@
                 "country": "UK",
                 "url": "https://www.linkedin.com/company/publicissapient/",
                 "thumbnail": "/Publicis-Sapient.jpg",
-                "description": "- Design, develop and unit test applications in accordance with established standards\n- Package and support the deployment of releases\n- Analyze and resolve technical and application problems\n- Adhere to high-quality development principles while delivering solutions on-time and on-budget\n"
+                "description": "- Build a brand new chatbot for the Ford UK website.\n-  Tech Stack: React, Material UI, Node.js, TypeScript, AWS Lex, AWS EC2, MongoDB\n"
             },
             {
                 "organization": "Schmoffee",
@@ -119,18 +120,19 @@
                 "country": "UK",
                 "url": "https://www.linkedin.com/company/schmoffee/",
                 "thumbnail": "/schmoffee.jpg",
-                "description": "- In charge of leading a pilot program in London, set to launch in September.\n- Oversee the infrastructure of the product and manage the company's technological roadmap. \n- Analyze target markets to create a viable business model/strategy.\n- Act as a liaison between the customers and the business.\n- Plan the MVP of the application."
+                "description": "- In charge of leading a pilot program in London, set to launch in September. - Tech Stack: ReactNative, Typescript, AWS Amplify, Detox"
             },
             {
                 "organization": "Green Enterprise",
                 "role": "Lead Software Engineer (Full-Stack)",
                 "type": "Part-Time",
                 "startDate": "2022-04-01",
+                "endDate": "2022-08-01",
                 "city": "London",
                 "country": "UK",
                 "url": "https://www.linkedin.com/company/greenenterprise-official/",
                 "thumbnail": "/green-enterprise.png",
-                "description": "Building Opus, a cross-platform (web and mobile) AI driven talent-matching application."
+                "description": "Built the MVP for Opus, a cross-platform (web and mobile) AI driven talent-matching application."
             },
             {
                 "organization": "King's College London",
