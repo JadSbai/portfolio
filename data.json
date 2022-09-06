@@ -3,8 +3,9 @@
     "landing": {
         "title": "Hi, I'm Jad",
         "subtitles": [
-            "Full-stack developer 🌐",
-            "Founder of Schmoffee ☕"
+            "Founder of Schmoffee ☕",
+            "Full-stack developer 🌐"
+
         ],
         "professionalDetails": [
             {
@@ -92,7 +93,7 @@
             "name": "Slurp",
             "type": "Mobile",
             "tech_stack": ["ReactNative", "Firebase", "Detox", "JavaScript"],
-            "description": "A digital coffee shop platform that stood to disrupt the coffee shop business in London and beyond.\nThe system consists of 2 applications. The first one is a cross-platform mobile app aimed at coffee enthusiasts which, by the means of a map, allows users to easily browse through nearby coffee shops as well as quickly and seamlessly make an order. The second one is a Tablet app designed for coffee shops. Firstly, it comprises an order management interface which enables coffee shops to easily manage, track and prioritise orders. Secondly, it integrates a stock management system for monitoring stocks resulting in reduced waste and improvement of both staff and customer experience by avoiding cancelled orders.\n",
+            "description": "Led as product manager to build Slurp, a digital coffee shop platform that stood to disrupt the coffee shop business in London and beyond.\nParticipated as a full-stack developer to build the system which consists of 2 applications. The first one is a cross-platform mobile app aimed at coffee enthusiasts which, by the means of a map, allows users to easily browse through nearby coffee shops as well as quickly and seamlessly make an order. The second one is a Tablet app designed for coffee shops. Firstly, it comprises an order management interface which enables coffee shops to easily manage, track and prioritise orders. Secondly, it integrates a stock management system for monitoring stocks resulting in reduced waste and improvement of both staff and customer experience by avoiding cancelled orders.\n",
             "repository": "",
             "link": "/screencast.mp4",
             "image": "/coffee.jpg"
@@ -100,17 +101,6 @@
     ],
     "experience": {
         "Work Experience": [
-            {
-                "organization": "Publicis Sapient",
-                "role": "Software Engineer",
-                "type": "Internship",
-                "startDate": "2022-06-27",
-                "city": "London",
-                "country": "UK",
-                "url": "https://www.linkedin.com/company/publicissapient/",
-                "thumbnail": "/Publicis-Sapient.jpg",
-                "description": "- Build a brand new chatbot for the Ford UK website.\n-  Tech Stack: React, Material UI, Node.js, TypeScript, AWS Lex, AWS EC2, MongoDB\n"
-            },
             {
                 "organization": "Schmoffee",
                 "role": "Chief Executive Officer",
@@ -120,7 +110,30 @@
                 "country": "UK",
                 "url": "https://www.linkedin.com/company/schmoffee/",
                 "thumbnail": "/schmoffee.jpg",
-                "description": "- In charge of leading a pilot program in London, set to launch in September. - Tech Stack: ReactNative, Typescript, AWS Amplify, Detox"
+                "description": "- Lead a pilot program in London, set to launch in September. - Tech Stack: ReactNative, Typescript, AWS Amplify, Detox"
+            },
+            {
+                "organization": "King's College London",
+                "role": "Undergraduate Teaching Assistant",
+                "type": "Part-Time",
+                "startDate": "2022-01-17",
+                "city": "London",
+                "country": "UK",
+                "url": "https://www.linkedin.com/school/king's-college-london/",
+                "thumbnail": "/Kings.jpg",
+                "description": "Conduct bi-weekly 2-hour tutorials with 20 students per session in the \"Software Engineering\" module; covering the main components of the Software Development Process and techniques to enhance its quality.\n- Conduct weekly 2-hour practical sessions with 15 students per session in the\n\"Practical Experiences of Programming\" module; covering topics such as: generic programming, virtualization, memory management, smart pointers, non-imperative programming concepts, lambda\nfunctions and higher-order functions."
+            },
+            {
+                "organization": "Publicis Sapient",
+                "role": "Software Engineer",
+                "type": "Internship",
+                "startDate": "2022-06-27",
+                "endDate": "2022-09-09",
+                "city": "London",
+                "country": "UK",
+                "url": "https://www.linkedin.com/company/publicissapient/",
+                "thumbnail": "/Publicis-Sapient.jpg",
+                "description": "- Worked as full-stack developer to build a brand new chat-bot for the Ford UK website.\n-  Tech Stack: React, Material UI, Node.js, TypeScript, AWS Lex, AWS EC2, MongoDB\n"
             },
             {
                 "organization": "Green Enterprise",
@@ -132,23 +145,12 @@
                 "country": "UK",
                 "url": "https://www.linkedin.com/company/greenenterprise-official/",
                 "thumbnail": "/green-enterprise.png",
-                "description": "Built the MVP for Opus, a cross-platform (web and mobile) AI driven talent-matching application."
-            },
-            {
-                "organization": "King's College London",
-                "role": "Undergraduate Teaching Assistant",
-                "type": "Part-Time",
-                "startDate": "2022-01-17",
-                "city": "London",
-                "country": "UK",
-                "url": "https://www.linkedin.com/school/king's-college-london/",
-                "thumbnail": "/Kings.jpg",
-                "description": "- Conducted bi-weekly 2-hour tutorials with 20 students per session in the \"Software Engineering\" module; covering the main components of the Software Development Process and techniques to enhance its quality.\n- Conduct weekly 2-hour practical sessions with 15 students per session in the\n\"Practical Experiences of Programming\" module; covering topics such as: generic programming, virtualization, memory management, smart pointers, non-imperative programming concepts, lambda\nfunctions and higher-order functions."
+                "description": "Built the MVP for Opus, a cross-platform (web and mobile) AI driven talent-matching application. Showcased at the Hult Prize Accelerator."
             }
         ]
     },
     "about": {
-        "description": "I am a multi-lingual Full-Stack Software Engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Founded Schmoffee",
+        "description": "I am a multi-lingual entrepreneur and full-stack software engineer whose mission is to empower small businesses by offering bespoke technical solutions that leverage the power of modern cloud computing and AI, enabling them to thrive in the digital world.\n I aim to deliver financial prosperity through competitive solutions that respect and highlight their unique identity while multiplying their visibility and promoting their expertise. \nIt also means providing equitable access to high quality fairtrade products at affordable prices.\n In that vision, I Founded Schmoffee",
         "picture": "/profile-picture.jpg",
         "social": [
             {
