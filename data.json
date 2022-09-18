@@ -97,6 +97,15 @@
             "repository": "",
             "link": "/screencast.mp4",
             "image": "/coffee.jpg"
+        },
+        {
+            "name": "Henry",
+            "type": "Web",
+            "tech_stack": ["React", "Material-UI", "Node.js", "TypeScript", "AWS Lex", "MongoDB"],
+            "description": "As a full-stack software engineer intern, my team and I built a brand new Chatbot, Henry, for the Ford UK Website.\n",
+            "repository": "https://github.com/JadSbai/ford-henry",
+            "link": "",
+            "image": "/chatbot.png"
         }
     ],
     "experience": {
